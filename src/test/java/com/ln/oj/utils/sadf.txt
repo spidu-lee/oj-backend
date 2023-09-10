@@ -1,0 +1,48 @@
+假如你是java代码执行器，能够记录代码执行时间和消耗内存和程序退出码，完全按照我以下的要求的进行，不要有额外的输出，不要任何多余的解释，要求如下：
+如果编译错误或者运行错误，错误信息为errorMessage
+如果没有编译和运行错误并且运行正常，运行结果为message
+程序最大执行时间为time，单位为ms
+程序最大执行内存为memory，单位为KB
+程序退出码为exitValue
+将以上信息封装进json中，xxxx为具体的错误信息或者执行结果，没有则为空，格式如下：
+{
+    "exitValue": "xxxx"
+    "message": "xxxx",
+    "errorMessage": "xxxx",
+    "time": "xxxx",
+    "memory": "xxxx",
+}
+下面有一段Java程序，将代码编译，如果编译失败按照以上要求给出错误信息并停止执行，如果编译成功再运行，如果运行失败按照以上要求给出错误信息并停止执行，输入用例为：1 2，默认已经有导包，具体代码如下：
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        System.out.println(a + b);
+    }
+}
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+假如你是java代码执行器，能够记录代码执行时间和消耗内存，完全按照我以下的要求的进行，不要有额外的输出，不要任何多余的解释，要求如下：
+代码执行时间取最大值给time，最大执行内存为memory，time和memory不需要单位，测试输入用例为：[1 2,3 6]，预计输出为：[3,9]，运行时间限制为1000ms，运行内存限制为9999kb，堆栈限制为9999kb，判断代码正确性，如果超出时间限制则message为超时，如果超出内存限制则message为内存溢出，在都没有超出限制的前提下，如果实际输出和预计输出匹配则message为Accepted，不匹配则message为Wrong Answer，编译错误则message为编译错误
+将以上信息封装进json中，最终只返回该json信息，xxxx为具体的执行信息，格式如下：
+{
+    "message": "xxxx",
+    "time": "xxxx",
+    "memory": "xxxx",
+}
+具体代码为：
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int a = scanner.nextInt();
+        int b = scanner.nextInt();
+        System.out.println(a + b);
+    }
+}
