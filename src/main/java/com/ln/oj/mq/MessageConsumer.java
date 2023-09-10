@@ -7,7 +7,6 @@ import com.ln.oj.core.judge.JudgeService;
 import com.ln.oj.exception.BusinessException;
 import com.ln.oj.model.entity.Question;
 import com.ln.oj.model.entity.QuestionSubmit;
-import com.ln.oj.model.enums.QuestionSubmitStatusEnum;
 import com.ln.oj.service.QuestionService;
 import com.ln.oj.service.QuestionSubmitService;
 import com.rabbitmq.client.Channel;

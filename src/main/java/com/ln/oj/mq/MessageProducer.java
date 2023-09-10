@@ -1,7 +1,6 @@
 package com.ln.oj.mq;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

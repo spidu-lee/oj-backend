@@ -1,7 +1,6 @@
 package com.ln.oj.controller;
 
 import cn.hutool.json.JSONUtil;
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.google.gson.Gson;
 import com.ln.oj.annotation.AuthCheck;
