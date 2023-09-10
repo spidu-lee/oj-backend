@@ -1,6 +1,6 @@
 <center>
 
-# Cat Online Judge
+# Online Judge
 
 ![logo.png](https://cdn.jsdelivr.net/gh/spidu-lee/picture/img/202309101744385.png)
 
