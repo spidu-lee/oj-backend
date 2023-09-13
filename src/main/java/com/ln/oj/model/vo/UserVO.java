@@ -40,6 +40,11 @@ public class UserVO implements Serializable {
     private Integer coin;
 
     /**
+     * 通过题目数
+     */
+    private Integer acceptNum;
+
+    /**
      * 用户角色：user/admin/vip
      */
     private String userRole;

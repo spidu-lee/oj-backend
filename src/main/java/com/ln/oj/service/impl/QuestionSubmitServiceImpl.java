@@ -117,10 +117,6 @@ public class QuestionSubmitServiceImpl extends ServiceImpl<QuestionSubmitMapper,
         } else {
             messageProducer.sendMessage("code_exchange", "my_routingKey", String.valueOf(questionSubmitId));
         }
-        // TODO 判题
-//        CompletableFuture.runAsync(() -> {
-//            judgeService.doJudge(questionSubmitId);
-//        });
 
         return questionSubmit.getId();
     }

@@ -33,8 +33,8 @@ public class AIUtil {
 
     private static String chatByYu(String content) {
 
-        String accessKey = "1";
-        String secretKey = "1";
+        String accessKey = "yj9ij3bjnzd01x3yik9higifq9xvc2ds";
+        String secretKey = "c3qd7go1lix6otq5yeqfztivmzgjfpds";
         YuCongMingClient client = new YuCongMingClient(accessKey, secretKey);
 
         DevChatRequest devChatRequest = new DevChatRequest();
@@ -48,9 +48,9 @@ public class AIUtil {
         SparkClient sparkClient = new SparkClient();
 
         // 设置认证信息
-        sparkClient.appid = "1";
-        sparkClient.apiKey = "1";
-        sparkClient.apiSecret = "1";
+        sparkClient.appid = "102ce96f";
+        sparkClient.apiKey = "b42e0303aacccdeeedc44f861cea5cee";
+        sparkClient.apiSecret = "MDZkZjcxMWQ2YjZjNjllOGU4NWE0NmVh";
 
         // 消息列表，可以在此列表添加历史对话记录
         List<SparkMessage> messages = new ArrayList<>();

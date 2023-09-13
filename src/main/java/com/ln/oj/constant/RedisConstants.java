@@ -17,4 +17,7 @@ public interface RedisConstants {
     // 签到
     String USER_SIGN_KEY = "sign:";
 
+    // 题目通过数
+    String USER_ACCEPT_NUM = "user:accept";
+
 }

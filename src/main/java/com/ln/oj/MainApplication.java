@@ -1,5 +1,6 @@
 package com.ln.oj;
 
+import com.ln.oj.mq.InitRabbitMQ;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,6 +18,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class MainApplication {
 
     public static void main(String[] args) {
+        InitRabbitMQ.doInit();
         SpringApplication.run(MainApplication.class, args);
     }
 

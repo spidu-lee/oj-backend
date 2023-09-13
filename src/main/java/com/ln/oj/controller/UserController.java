@@ -28,8 +28,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 /**
  * 用户接口
@@ -53,6 +54,23 @@ public class UserController {
 
     @Resource
     private RedisLimiter redisLimiter;
+
+    @GetMapping("/score")
+    public BaseResponse getScore() {
+        String key = RedisConstants.USER_ACCEPT_NUM;
+        Set<String> range = stringRedisTemplate.opsForZSet().range(key, 0, 9);
+        if (range == null || range.isEmpty()) {
+            return ResultUtils.success(new HashMap<>());
+        }
+        List<Long> ids = range.stream().map(Long::valueOf).collect(Collectors.toList());
+        Collections.reverse(ids);
+        Map<String,Integer> map = new LinkedHashMap<>();
+        for (Long id : ids) {
+            User user = userService.getById(id);
+            map.put(user.getUserName(),user.getAcceptNum());
+        }
+        return ResultUtils.success(map);
+    }
 
     /**
      * 获取签到记录
